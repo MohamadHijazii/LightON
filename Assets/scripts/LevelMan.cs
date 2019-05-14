@@ -4,14 +4,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-public class LevelManager : MonoBehaviour
+public class LevelMan : MonoBehaviour
 {
     Button[] lvls;
     public Transform target;
     public Button l;
     int N;
     List<string> levels;
-    
+
     public void loadNew()
     {
         Model model = new Model();
@@ -31,12 +31,12 @@ public class LevelManager : MonoBehaviour
         levels = model.getLevelList();
         N = levels.Count;
         lvls = new Button[N];
-        for(int i = 0; i < N; i++)
+        for (int i = 0; i < N; i++)
         {
             int c = i;
             Button newbtn = Instantiate<Button>(l, target);
             lvls[i] = newbtn;
-            lvls[i].GetComponentInChildren<TextMeshProUGUI>().text = (i+1) + "\n"+getN(i);
+            lvls[i].GetComponentInChildren<TextMeshProUGUI>().text = (i + 1) + "\n" + getN(i);
             lvls[i].onClick.AddListener(() => goToLevel(c));
         }
     }
