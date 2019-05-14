@@ -49,7 +49,7 @@ public class Manager : MonoBehaviour
             cas.text += i + ": ";
             for(int j = 0; j < temp.Count; j++)
             {
-                cas.text += temp[j]+" ";
+                cas.text += temp[j]+" "; 
             }
             cas.text += "\n";
         }
